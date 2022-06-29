@@ -1,5 +1,5 @@
 # How to configure a Windows Host for Ansible?
-steps to configure a “basic” authentication, use a Local/Administrator Accounts for authentication and successfully execute a simple “win_ping” Ansible Playbook. This initial configuration sometimes is a roadblock for some Windows users to start using Ansible. 
+Steps to configure a “basic” authentication, use a Local/Administrator Accounts for authentication and successfully execute a simple “win_ping” Ansible Playbook. This initial configuration sometimes is a roadblock for some Windows users to start using Ansible. 
 
 # Configure a Windows Host for Ansible
 * Windows 7, 8.1, 10, 11
@@ -14,8 +14,8 @@ steps to configure a “basic” authentication, use a Local/Administrator Accou
 # Step below is going to cover the WinRM connection method with “basic” authentication. 
 
 ## **Links**
-Setting up a Windows Host --> https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
-Windows Remote Management --> https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html
+1. Setting up a Windows Host --> https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
+2. Windows Remote Management --> https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html
 
 # **Demo**
 
@@ -26,7 +26,7 @@ Windows Remote Management --> https://docs.ansible.com/ansible/latest/user_guide
 3. setup WinRM
 4. create Inventory & Playbook
 
-### **Only to be done if Administrator account is not suppose to be used**
+### **NOTE: creating user step is only to be done if build-in Administrator account is not suppose to be used**
 - First of all, I’d suggest creating a user to run Ansible automation. This user needs to be Power User or have Administrative privileges in order to execute some Ansible code. 
 
 ## Create an “ansible” user
@@ -34,11 +34,11 @@ Windows Remote Management --> https://docs.ansible.com/ansible/latest/user_guide
 [](Readme.md) ![](ansible_configure_windows1.png) 
 
 2. New User (right-click from “Users” > “New User”)
-User name: ansible 
-Full name: ansible 
-Description: ansible user 
-Password and Confirm password: Password123@ 
-Options: enable --> Password never expires and disable --> User must change password at next logon
+- User name: ansible 
+- Full name: ansible 
+- Description: ansible user 
+- Password and Confirm password: Password123@ 
+- Options: enable --> Password never expires and disable --> User must change password at next logon
 ![](ansible_configure_windows2.png)
 
 3. Add “ansible” user to “administrators” Group
@@ -193,7 +193,7 @@ ansible_winrm_server_cert_validation=ignore
 
 3. Create a test playbook for connection check
 ```bash
-my_project$ vim win_ping.yml
+my_project$ vim ping.yml
 ```
 ```yml
 ---
@@ -207,8 +207,8 @@ my_project$ vim win_ping.yml
 ```
 4. Execute to check the connection
 ```bash
-my_project$ ansible-playbook -i inventory win_ping.yml
-PLAY [win_ping module demo] ***********************************************************************
+my_project$ ansible-playbook -i inventory ping.yml
+PLAY [remote windows connection check] ***********************************************************************
 TASK [test connection] ****************************************************************************
 ok: [win2019]
 PLAY RECAP ****************************************************************************************

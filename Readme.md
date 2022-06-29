@@ -215,4 +215,5 @@ PLAY RECAP *********************************************************************
 win2019                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-### EIf you get output as above, Congrats and enjoy as you have successfully made connection with your windows node. Now you can start coding your playbook for the windows.
+**If you get output as above, Congrats and enjoy as you have successfully made connection with your windows node. Now you can start coding your playbook for the windows.
+**

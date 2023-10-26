@@ -93,7 +93,7 @@ PS C:\Users\achettri>
 4. Setup WinRM
 ```powershell
 PS C:\Users\achettri> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
->> $url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
+>> $url = "https://github.com/AlbanAndrieu/ansible-windows/blob/master/files/ConfigureRemotingForAnsible.ps1"
 >> $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
 >>
 >> (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
@@ -215,4 +215,4 @@ PLAY RECAP *********************************************************************
 win2019                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-**If you get output as above, Congrats and enjoy as you have successfully made connection with your windows node. Now you can start coding your playbook for the windows.**
+**If you get output as above, Congrats and enjoy as you have successfully made the connection with your Windows node. Now you can start coding your playbook for the windows.**

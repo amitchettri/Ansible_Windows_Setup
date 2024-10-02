@@ -93,12 +93,12 @@ PS C:\Users\achettri>
 4. Setup WinRM
 ```powershell
 PS C:\Users\achettri> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
->> $url = "https://github.com/AlbanAndrieu/ansible-windows/blob/master/files/ConfigureRemotingForAnsible.ps1"
+>> $url = "https://github.com/amitchettri/Ansible_Windows_Setup/blob/main/ConfigureRemotingForAnsible.ps1"
 >> $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
 >>
 >> (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
 >>
->> powershell.exe -ExecutionPolicy ByPass -File $file
+>> powershell.exe -ExecutionPolicy ByPass -File $file -SkipNetworkProfileCheck -CertValidityDays 365
 PS C:\Users\achettri>
 ```
 

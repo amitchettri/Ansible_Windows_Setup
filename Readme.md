@@ -187,7 +187,7 @@ ansible_user=<ansible/Administrator> # base on what you want to use
 ansible_password=SuperSecurePassword123@
 ansible_port=5986
 ansible_connection=winrm
-ansible_winrm_transport=basic
+ansible_winrm_transport=ntlm
 ansible_winrm_server_cert_validation=ignore
 ```
 
